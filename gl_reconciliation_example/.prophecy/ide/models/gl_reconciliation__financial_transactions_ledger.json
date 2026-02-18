@@ -1,0 +1,258 @@
+{
+  "id" : "gl_reconciliation__financial_transactions_ledger",
+  "metainfo" : {
+    "label" : "gl_reconciliation__financial_transactions_ledger",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"customer_abc_standardized_gl\"",
+        "materialized" : "view",
+        "database" : "\"zurich_pov\"",
+        "schema" : "\"general_ledger\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097" : {
+      "id" : "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "financial_transactions_ledger",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Reformat_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "V7ml5ls2pNt6dKzn4Uzp6$$-DiD0i646a67IsPtTQ4Iy",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "h2-pgen04qiVykQRLkSOJ$$DtWMTnBJVcRi84BC00t-e",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve" : {
+      "id" : "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : 160,
+        "y" : -400,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Number", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Title", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Entry_Date", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Transaction_ID", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Transaction_Type", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Memo", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Debit", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Credit", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##FX_Currency", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##FX_Rate", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Cost_Center_Code", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Cost_Center_Name", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Project_Code", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Project_Name", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Entered_By", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Approved_By", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Type", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Category", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Subcategory" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CAST(Account_Number AS STRING)"
+          },
+          "alias" : "Account_Number",
+          "_row_id" : "2119472959"
+        }, {
+          "expression" : {
+            "expression" : "Account_Title"
+          },
+          "alias" : "Account_Title",
+          "_row_id" : "1603509616"
+        }, {
+          "expression" : {
+            "expression" : "Entry_Date"
+          },
+          "alias" : "Entry_Date",
+          "_row_id" : "859045359"
+        }, {
+          "expression" : {
+            "expression" : "Transaction_ID"
+          },
+          "alias" : "Transaction_ID",
+          "_row_id" : "1236425025"
+        }, {
+          "expression" : {
+            "expression" : "Transaction_Type"
+          },
+          "alias" : "Transaction_Type",
+          "_row_id" : "170929685"
+        }, {
+          "expression" : {
+            "expression" : "Memo"
+          },
+          "alias" : "Memo",
+          "_row_id" : "2143537322"
+        }, {
+          "expression" : {
+            "expression" : "Debit"
+          },
+          "alias" : "Debit",
+          "_row_id" : "1485037385"
+        }, {
+          "expression" : {
+            "expression" : "Credit"
+          },
+          "alias" : "Credit",
+          "_row_id" : "1397432368"
+        }, {
+          "expression" : {
+            "expression" : "FX_Currency"
+          },
+          "alias" : "FX_Currency",
+          "_row_id" : "1312790898"
+        }, {
+          "expression" : {
+            "expression" : "FX_Rate"
+          },
+          "alias" : "FX_Rate",
+          "_row_id" : "1886170130"
+        }, {
+          "expression" : {
+            "expression" : "Cost_Center_Code"
+          },
+          "alias" : "Cost_Center_Code",
+          "_row_id" : "981519851"
+        }, {
+          "expression" : {
+            "expression" : "Cost_Center_Name"
+          },
+          "alias" : "Cost_Center_Name",
+          "_row_id" : "710668685"
+        }, {
+          "expression" : {
+            "expression" : "Project_Code"
+          },
+          "alias" : "Project_Code",
+          "_row_id" : "773991410"
+        }, {
+          "expression" : {
+            "expression" : "Project_Name"
+          },
+          "alias" : "Project_Name",
+          "_row_id" : "1566629709"
+        }, {
+          "expression" : {
+            "expression" : "Entered_By"
+          },
+          "alias" : "Entered_By",
+          "_row_id" : "230908374"
+        }, {
+          "expression" : {
+            "expression" : "Approved_By"
+          },
+          "alias" : "Approved_By",
+          "_row_id" : "2009907777"
+        }, {
+          "expression" : {
+            "expression" : "Account_Type"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "179989966"
+        }, {
+          "expression" : {
+            "expression" : "Account_Category"
+          },
+          "alias" : "Account_Category",
+          "_row_id" : "1862321934"
+        }, {
+          "expression" : {
+            "expression" : "Account_Subcategory"
+          },
+          "alias" : "Account_Subcategory",
+          "_row_id" : "208394121"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "lm8boRLl2jGxeQTvBXOUo$$XxSheeGY4wFsI_Ih6VTY_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_" : {
+      "id" : "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "joined_data"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ ref('gl_reconciliation__joined_data') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0",
+          "dataExplorerProps" : {
+            "sorts" : [ ],
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ {
+                "lhs" : {
+                  "type" : "Field",
+                  "value" : "Transaction_ID"
+                },
+                "type" : "Binary",
+                "op" : "=",
+                "rhs" : {
+                  "type" : "Literal",
+                  "value" : "'TX880929'"
+                }
+              } ]
+            }
+          }
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "UcEWvFv1oarY77gZf0qh-",
+    "source" : "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve",
+    "sourcePort" : "lm8boRLl2jGxeQTvBXOUo$$XxSheeGY4wFsI_Ih6VTY_",
+    "target" : "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097",
+    "targetPort" : "V7ml5ls2pNt6dKzn4Uzp6$$-DiD0i646a67IsPtTQ4Iy",
+    "isWireless" : false
+  }, {
+    "id" : "vgNEnHjqdWgsB-vO38FUc",
+    "source" : "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+    "sourcePort" : "output_port_0",
+    "target" : "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve",
+    "targetPort" : "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

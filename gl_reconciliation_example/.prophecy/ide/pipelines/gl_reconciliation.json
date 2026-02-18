@@ -1,0 +1,1239 @@
+{
+  "id" : "gl_reconciliation",
+  "metainfo" : {
+    "label" : "gl_reconciliation",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false,
+    "processesVsModelFiles" : {
+      "8k9R-ob-nn76CXk-Dghtl$$MjRq1xCLmwYIypQYS4Eq9" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "hpp2UdS1dOA8Df7alwZyw$$mUx0l3fTj04AsH9OIgPO4" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_" : "models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql",
+      "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097" : "models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql",
+      "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "uNefGD-ihpuwdJoRDHxfP$$RnFlJnm3qi-3R6tYkBEsG" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve" : "models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql",
+      "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql"
+    }
+  },
+  "processes" : {
+    "8k9R-ob-nn76CXk-Dghtl$$MjRq1xCLmwYIypQYS4Eq9" : {
+      "id" : "8k9R-ob-nn76CXk-Dghtl$$MjRq1xCLmwYIypQYS4Eq9",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "master_coa_list2",
+        "x" : 80,
+        "y" : 340,
+        "phase" : 0,
+        "comment" : "Loads the master chart of accounts list from the general ledger for financial analysis.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "master_coa_list2",
+          "sourceType" : "Table",
+          "sourceName" : "zurich_pov_general_ledger",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "-JVNpbnJLAvU90PI3ex_D$$aN8b6rI2AdRk0XCgtFq1s",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "CDML-7jdaVahn43G1NppU$$_O6h0kL0IoWa2hJlVXWPO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P",
+      "index" : 1
+    },
+    "hpp2UdS1dOA8Df7alwZyw$$mUx0l3fTj04AsH9OIgPO4" : {
+      "id" : "hpp2UdS1dOA8Df7alwZyw$$mUx0l3fTj04AsH9OIgPO4",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "master_coa_list",
+        "x" : 80,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Retrieves the master chart of accounts list from the Zurich general ledger for financial reporting.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "master_coa_list",
+          "sourceType" : "Table",
+          "sourceName" : "zurich_pov_general_ledger",
+          "alias" : ""
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "1qnUlcOC7GXfz_31OcsH9$$ELKjVGWE1yQDzD5aA4BnU",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "2l6wjlZdDSwg3z6Afayl0$$NcFv3FVqyiWbQuZf9LUj-",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P",
+      "index" : 0
+    },
+    "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr" : {
+      "id" : "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "account_details",
+        "x" : 820,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Standardizes and adjusts account details, reclassifying account types for financial reporting consistency.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##Account_Number", "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##Account_Title", "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##Account_Type", "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##Account_Category", "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##Account_Subcategory", "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##IFRS_Code", "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_##GAAP_Code" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CAST(Account_Number AS STRING)"
+          },
+          "alias" : "Account_Number",
+          "_row_id" : "860173743"
+        }, {
+          "expression" : {
+            "expression" : "Account_Title"
+          },
+          "alias" : "Account_Title",
+          "_row_id" : "1716377326"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN (LAG(Account_Number) OVER (ORDER BY Account_Number NULLS LAST))\n  LIKE '8%'\n  AND Account_Type IN ('asset', 'equity', 'liability')\n    THEN CAST(CASE\n      WHEN Account_Type = 'equity'\n        THEN 'Revenue'\n      WHEN Account_Type = 'liability'\n        THEN 'Expense'\n      WHEN Account_Type = 'asset'\n        THEN 'Revenue'\n      ELSE NULL\n    END AS STRING)\n  ELSE Account_Type\nEND"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "1645341470"
+        }, {
+          "expression" : {
+            "expression" : "Account_Category"
+          },
+          "alias" : "Account_Category",
+          "_row_id" : "98154036"
+        }, {
+          "expression" : {
+            "expression" : "Account_Subcategory"
+          },
+          "alias" : "Account_Subcategory",
+          "_row_id" : "98617446"
+        }, {
+          "expression" : {
+            "expression" : "IFRS_Code"
+          },
+          "alias" : "IFRS_Code",
+          "_row_id" : "828326301"
+        }, {
+          "expression" : {
+            "expression" : "GAAP_Code"
+          },
+          "alias" : "GAAP_Code",
+          "_row_id" : "428341935"
+        }, {
+          "expression" : {
+            "expression" : "CAST(Account_Number AS STRING)"
+          },
+          "alias" : "Account_Number_str",
+          "_row_id" : "L75zdXE_AP"
+        }, {
+          "expression" : {
+            "expression" : "UPPER(Account_Title)"
+          },
+          "alias" : "All_Caps_Title",
+          "_row_id" : "wXFSZcQnga"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_",
+          "slug" : "sorted_accounts"
+        } ],
+        "outputs" : [ {
+          "id" : "a4-eeHE8Ztp6fQnBwKX7Q$$tZTYJzLU3Rbb9J0v6tkwl",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P"
+    },
+    "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e" : {
+      "id" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "joined_data",
+        "x" : -120,
+        "y" : -400,
+        "phase" : 0,
+        "comment" : "Combines transaction records with account details to provide a complete view of account activity and classification.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "mca",
+          "expression" : {
+            "expression" : "gca.Account_Number = mca.Account_Number"
+          },
+          "joinType" : ""
+        } ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "gca.Account_Number"
+          },
+          "_row_id" : "1432931353"
+        }, {
+          "expression" : {
+            "expression" : "gca.Account_Title"
+          },
+          "_row_id" : "1003088595"
+        }, {
+          "expression" : {
+            "expression" : "gca.Entry_Date"
+          },
+          "_row_id" : "966026455"
+        }, {
+          "expression" : {
+            "expression" : "gca.Transaction_ID"
+          },
+          "_row_id" : "1084157605"
+        }, {
+          "expression" : {
+            "expression" : "gca.Transaction_Type"
+          },
+          "_row_id" : "1487699175"
+        }, {
+          "expression" : {
+            "expression" : "gca.Memo"
+          },
+          "_row_id" : "821065746"
+        }, {
+          "expression" : {
+            "expression" : "gca.Debit"
+          },
+          "_row_id" : "910238266"
+        }, {
+          "expression" : {
+            "expression" : "gca.Credit"
+          },
+          "_row_id" : "1703814217"
+        }, {
+          "expression" : {
+            "expression" : "gca.FX_Currency"
+          },
+          "_row_id" : "704940379"
+        }, {
+          "expression" : {
+            "expression" : "gca.FX_Rate"
+          },
+          "_row_id" : "1404382843"
+        }, {
+          "expression" : {
+            "expression" : "gca.Cost_Center_Code"
+          },
+          "_row_id" : "2064097703"
+        }, {
+          "expression" : {
+            "expression" : "gca.Cost_Center_Name"
+          },
+          "_row_id" : "284935921"
+        }, {
+          "expression" : {
+            "expression" : "gca.Project_Code"
+          },
+          "_row_id" : "1672299895"
+        }, {
+          "expression" : {
+            "expression" : "gca.Project_Name"
+          },
+          "_row_id" : "1697441509"
+        }, {
+          "expression" : {
+            "expression" : "gca.Entered_By"
+          },
+          "_row_id" : "1244708273"
+        }, {
+          "expression" : {
+            "expression" : "gca.Approved_By"
+          },
+          "_row_id" : "1588256177"
+        }, {
+          "expression" : {
+            "expression" : "mca.Account_Type"
+          },
+          "_row_id" : "2085647337"
+        }, {
+          "expression" : {
+            "expression" : "mca.Account_Category"
+          },
+          "_row_id" : "1972288162"
+        }, {
+          "expression" : {
+            "expression" : "mca.Account_Subcategory"
+          },
+          "_row_id" : "445387221"
+        } ],
+        "activeTab" : "conditions",
+        "columnsSelector" : [ "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Account_Number", "7q8tvk2SuB04rI63PB7Kg$$ARPEjVFlu9m8Yp3b1-jJH##Account_Number", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Account_Number", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Account_Title", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Entry_Date", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Transaction_ID", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Transaction_Type", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Memo", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Debit", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Credit", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##FX_Currency", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##FX_Rate", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Cost_Center_Code", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Cost_Center_Name", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Project_Code", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Project_Name", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Entered_By", "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF##Approved_By", "7q8tvk2SuB04rI63PB7Kg$$ARPEjVFlu9m8Yp3b1-jJH##Account_Type", "7q8tvk2SuB04rI63PB7Kg$$ARPEjVFlu9m8Yp3b1-jJH##Account_Category", "7q8tvk2SuB04rI63PB7Kg$$ARPEjVFlu9m8Yp3b1-jJH##Account_Subcategory" ],
+        "headAlias" : "gca"
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF",
+          "slug" : "gca"
+        }, {
+          "id" : "7q8tvk2SuB04rI63PB7Kg$$ARPEjVFlu9m8Yp3b1-jJH",
+          "slug" : "mca"
+        } ],
+        "outputs" : [ {
+          "id" : "w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+          "slug" : "out",
+          "dataExplorerProps" : {
+            "sorts" : [ ],
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ {
+                "lhs" : {
+                  "type" : "Field",
+                  "value" : "Transaction_ID"
+                },
+                "type" : "Binary",
+                "op" : "=",
+                "rhs" : {
+                  "type" : "Literal",
+                  "value" : "'TX880929'"
+                }
+              } ]
+            }
+          }
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM" : {
+      "id" : "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM",
+      "component" : "OrderBy",
+      "metadata" : {
+        "label" : "sorted_accounts",
+        "x" : 640,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Arranges account data in ascending order by account number.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "DJw3o8SLRTvyCCZQgSyjg$$0Gc77lVYc-tFjF-YChzj0##Account_Number" ],
+        "orders" : [ {
+          "expression" : {
+            "expression" : "Account_Number"
+          },
+          "sortType" : "asc"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "DJw3o8SLRTvyCCZQgSyjg$$0Gc77lVYc-tFjF-YChzj0",
+          "slug" : "Pivot_1"
+        } ],
+        "outputs" : [ {
+          "id" : "Gncr10CswdyAOfcqm9haL$$5FLZ1c6uW-H7rhirhY_Kq",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P"
+    },
+    "FVCwFRMieNfsPK5YSOKuP$$xKaZ04KupGK8YwMPDIlEN" : {
+      "id" : "FVCwFRMieNfsPK5YSOKuP$$xKaZ04KupGK8YwMPDIlEN",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_1",
+        "x" : 40,
+        "y" : 80,
+        "height" : 39.999977111816406,
+        "width" : 402.9999694824219,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "**Master Chart of Accounts aggregation and cleansing**"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P"
+    },
+    "G1vGLnlH-vp059nvTxS-T$$3mR2x0z10CHncsIcTF9Jo" : {
+      "id" : "G1vGLnlH-vp059nvTxS-T$$3mR2x0z10CHncsIcTF9Jo",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_3",
+        "x" : -1040,
+        "y" : -500,
+        "height" : 40.00001525878906,
+        "width" : 347.99993896484375,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "**General Ledger Data provided by client**"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw" : {
+      "id" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "validation_results",
+        "x" : 700,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Overwrites the general ledger view with updated recommendation output data.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "rec_output",
+          "sourceType" : "View",
+          "sourceName" : "zurich_pov_general_ledger",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RLO55X1dNwF1YzQNxcA5k$$37vWltSynmTmlxcD8wQzZ",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "NEqoUnITa_9zjXs6i768b$$h49acT1ThzKUCpzsSXpf9",
+          "slug" : "out",
+          "dataExplorerProps" : {
+            "visualization" : {
+              "tableId" : "",
+              "title" : "Charts Title",
+              "type" : "line",
+              "config" : {
+                "xAxisColumn" : "Account_Type",
+                "yAxisColumn" : [ {
+                  "name" : "SUM_Debit",
+                  "agg" : "Sum",
+                  "color" : "#4c4ddc"
+                } ],
+                "showLegend" : true,
+                "showTooltip" : true,
+                "barAndLineConfig" : {
+                  "showGrid" : true
+                },
+                "areaConfig" : {
+                  "showGrid" : true,
+                  "stacked" : false,
+                  "showGradient" : true
+                },
+                "pieConfig" : {
+                  "angle" : "full",
+                  "chartStyle" : "pie",
+                  "innerRadius" : 0,
+                  "outerRadius" : 100,
+                  "centerX" : 50,
+                  "centerY" : 50
+                },
+                "candlestickConfig" : {
+                  "openColumn" : "",
+                  "closeColumn" : ""
+                },
+                "mapConfig" : {
+                  "mapType" : "marker",
+                  "fitBounds" : false,
+                  "markerConfig" : {
+                    "options" : {
+                      "pathOptions" : {
+                        "color" : "black",
+                        "fillColor" : "black",
+                        "fillOpacity" : 0.1
+                      },
+                      "showTooltip" : true,
+                      "showLabel" : true
+                    },
+                    "columns" : {
+                      "column" : "",
+                      "labelColumn" : "",
+                      "tooltipColumns" : [ "Account_Type", "SUM_Debit", "SUM_Credit", "Rounded_Diff", "VALIDATION_RESULT" ]
+                    }
+                  },
+                  "displacementConfig" : {
+                    "options" : {
+                      "pathOptions" : {
+                        "color" : "blue",
+                        "weight" : 1.5
+                      },
+                      "showArrow" : true
+                    },
+                    "columns" : {
+                      "sourceColumn" : "",
+                      "sourceLabelColumn" : "",
+                      "destinationColumn" : "",
+                      "destinationLabelColumn" : "",
+                      "tooltipColumns" : [ "Account_Type", "SUM_Debit", "SUM_Credit", "Rounded_Diff", "VALIDATION_RESULT" ]
+                    }
+                  }
+                },
+                "scatterConfig" : {
+                  "series" : [ ],
+                  "type" : "Scatter"
+                },
+                "yAxisConfig" : { },
+                "invalidConfig" : false
+              },
+              "errors" : { }
+            },
+            "filter" : { },
+            "sorts" : [ ]
+          }
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ"
+    },
+    "NjGcLtXd9pyO2KzjJDdju$$NivwkNTD8pcHnpLkFnarL" : {
+      "id" : "NjGcLtXd9pyO2KzjJDdju$$NivwkNTD8pcHnpLkFnarL",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_4",
+        "x" : -160,
+        "y" : -520,
+        "height" : 80.00000762939453,
+        "width" : 219.9999237060547,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "**Enrich PBC GL with additional data, match Txn with accounts**"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp" : {
+      "id" : "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "total_debits_credits",
+        "x" : 100,
+        "y" : 340,
+        "phase" : 0,
+        "comment" : "Summarizes total debits and credits to show overall financial activity.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww##Debit", "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww##Credit" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "'Net'"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "5mjoE-UE_U"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Debit)"
+          },
+          "alias" : "SUM_Debit",
+          "_row_id" : "1504774799"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Credit)"
+          },
+          "alias" : "SUM_Credit",
+          "_row_id" : "1633886328"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww",
+          "slug" : "joined_data"
+        } ],
+        "outputs" : [ {
+          "id" : "KUrUS_qDy3ynSJwHRY6jt$$HGpoTtfYo78BJVjloQB1O",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ"
+    },
+    "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L" : {
+      "id" : "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "transaction_validation",
+        "x" : 500,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Checks if debits and credits match for each account type and flags discrepancies.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF##Account_Type", "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF##SUM_Debit", "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF##SUM_Credit" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "Account_Type"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "849896968"
+        }, {
+          "expression" : {
+            "expression" : "SUM_Debit"
+          },
+          "alias" : "SUM_Debit",
+          "_row_id" : "656027739"
+        }, {
+          "expression" : {
+            "expression" : "SUM_Credit"
+          },
+          "alias" : "SUM_Credit",
+          "_row_id" : "107878959"
+        }, {
+          "expression" : {
+            "expression" : "ROUND(SUM_Debit - SUM_Credit, 2)"
+          },
+          "alias" : "Rounded_Diff",
+          "_row_id" : "eN2QS_n6oK"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN SUM_Debit = SUM_Credit\n    THEN 'Valid  '\n  ELSE 'Invalid'\nEND"
+          },
+          "alias" : "VALIDATION_RESULT",
+          "_row_id" : "1839509659"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF",
+          "slug" : "total_debits_credits"
+        } ],
+        "outputs" : [ {
+          "id" : "kJj2wUJANAzr8W_gizPap$$PIud2dbG1KkD3bTGttI0M",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ"
+    },
+    "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ" : {
+      "id" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "Rec",
+        "x" : -40,
+        "y" : -240,
+        "height" : 528.9999389648438,
+        "width" : 831.984375,
+        "comment" : "Organizes related pipeline steps for clearer process visualization.",
+        "autoUpdateComment" : true
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097" : {
+      "id" : "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "financial_transactions_ledger",
+        "x" : 440,
+        "y" : -400,
+        "phase" : 0,
+        "comment" : "Loads standardized general ledger data for customer ABC for further processing.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "customer_abc_standardized_gl",
+          "sourceType" : "View",
+          "sourceName" : "zurich_pov_general_ledger",
+          "alias" : ""
+        },
+        "writeOptions" : {
+          "writeMode" : "overwrite"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "V7ml5ls2pNt6dKzn4Uzp6$$-DiD0i646a67IsPtTQ4Iy",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "h2-pgen04qiVykQRLkSOJ$$DtWMTnBJVcRi84BC00t-e",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3" : {
+      "id" : "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3",
+      "component" : "DbPivot",
+      "metadata" : {
+        "label" : "Pivot_1",
+        "x" : 460,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Organizes account details by grouping related financial attributes for each account number.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnGroups" : [ "Account_Number" ],
+        "separator" : {
+          "expression" : {
+            "expression" : ", "
+          },
+          "_row_id" : "567002728"
+        },
+        "isConcatWsSelected" : true,
+        "inputAlias" : "master_coa_list",
+        "allowSelection" : false,
+        "pivotColumnValues" : [ {
+          "expression" : {
+            "expression" : "'Account_Title'"
+          },
+          "_row_id" : "1458886550"
+        }, {
+          "expression" : {
+            "expression" : "'Account_Type'"
+          },
+          "_row_id" : "1456117720"
+        }, {
+          "expression" : {
+            "expression" : "'Account_Category'"
+          },
+          "_row_id" : "672619190"
+        }, {
+          "expression" : {
+            "expression" : "'Account_Subcategory'"
+          },
+          "_row_id" : "606424792"
+        }, {
+          "expression" : {
+            "expression" : "'IFRS_Code'"
+          },
+          "_row_id" : "409405943"
+        }, {
+          "expression" : {
+            "expression" : "'GAAP_Code'"
+          },
+          "_row_id" : "584059686"
+        } ],
+        "pivotColumn" : {
+          "expression" : {
+            "expression" : "Name"
+          },
+          "_row_id" : "1931965892"
+        },
+        "isValueColumnString" : true,
+        "isPivotColumnString" : true,
+        "aggregateFunctions" : [ {
+          "expression" : {
+            "expression" : "CONCAT_WS"
+          },
+          "_row_id" : "1482350257"
+        } ],
+        "valueColumn" : {
+          "expression" : {
+            "expression" : "Value"
+          },
+          "_row_id" : "2118355094"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0FYLPMZlRWuFo9Sj_0MiK$$WTAHTKFSwuQPs8DTZ12y8",
+          "slug" : "master_coa_list"
+        } ],
+        "outputs" : [ {
+          "id" : "q_mW5WLxflWXBxIRu_eDt$$k7vGb9p-nQ4liY1z8u5i7",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P"
+    },
+    "uNefGD-ihpuwdJoRDHxfP$$RnFlJnm3qi-3R6tYkBEsG" : {
+      "id" : "uNefGD-ihpuwdJoRDHxfP$$RnFlJnm3qi-3R6tYkBEsG",
+      "component" : "Dataset",
+      "metadata" : {
+        "label" : "gl_customer_abc",
+        "x" : -860,
+        "y" : -420,
+        "phase" : 0,
+        "comment" : "Loads customer data from the Zurich general ledger for further processing.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "table" : {
+          "name" : "gl_customer_abc",
+          "sourceType" : "Table",
+          "sourceName" : "zurich_pov_general_ledger",
+          "alias" : "",
+          "additionalProperties" : null
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UcJkR89-8T7mvDGeFtAVP$$zD0ZVMmlQwSve8G2Slfn3",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "K9bIa7yy__81G8F71JDDp$$WRHN2oLP1an-Qt2TYXuPP",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "index" : 0
+    },
+    "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve" : {
+      "id" : "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : 160,
+        "y" : -400,
+        "phase" : 0,
+        "comment" : "Standardizes and organizes financial transaction details for reporting and review.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Number", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Title", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Entry_Date", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Transaction_ID", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Transaction_Type", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Memo", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Debit", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Credit", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##FX_Currency", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##FX_Rate", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Cost_Center_Code", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Cost_Center_Name", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Project_Code", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Project_Name", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Entered_By", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Approved_By", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Type", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Category", "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-##Account_Subcategory" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "CAST(Account_Number AS STRING)"
+          },
+          "alias" : "Account_Number",
+          "_row_id" : "2119472959"
+        }, {
+          "expression" : {
+            "expression" : "Account_Title"
+          },
+          "alias" : "Account_Title",
+          "_row_id" : "1603509616"
+        }, {
+          "expression" : {
+            "expression" : "Entry_Date"
+          },
+          "alias" : "Entry_Date",
+          "_row_id" : "859045359"
+        }, {
+          "expression" : {
+            "expression" : "Transaction_ID"
+          },
+          "alias" : "Transaction_ID",
+          "_row_id" : "1236425025"
+        }, {
+          "expression" : {
+            "expression" : "Transaction_Type"
+          },
+          "alias" : "Transaction_Type",
+          "_row_id" : "170929685"
+        }, {
+          "expression" : {
+            "expression" : "Memo"
+          },
+          "alias" : "Memo",
+          "_row_id" : "2143537322"
+        }, {
+          "expression" : {
+            "expression" : "Debit"
+          },
+          "alias" : "Debit",
+          "_row_id" : "1485037385"
+        }, {
+          "expression" : {
+            "expression" : "Credit"
+          },
+          "alias" : "Credit",
+          "_row_id" : "1397432368"
+        }, {
+          "expression" : {
+            "expression" : "FX_Currency"
+          },
+          "alias" : "FX_Currency",
+          "_row_id" : "1312790898"
+        }, {
+          "expression" : {
+            "expression" : "FX_Rate"
+          },
+          "alias" : "FX_Rate",
+          "_row_id" : "1886170130"
+        }, {
+          "expression" : {
+            "expression" : "Cost_Center_Code"
+          },
+          "alias" : "Cost_Center_Code",
+          "_row_id" : "981519851"
+        }, {
+          "expression" : {
+            "expression" : "Cost_Center_Name"
+          },
+          "alias" : "Cost_Center_Name",
+          "_row_id" : "710668685"
+        }, {
+          "expression" : {
+            "expression" : "Project_Code"
+          },
+          "alias" : "Project_Code",
+          "_row_id" : "773991410"
+        }, {
+          "expression" : {
+            "expression" : "Project_Name"
+          },
+          "alias" : "Project_Name",
+          "_row_id" : "1566629709"
+        }, {
+          "expression" : {
+            "expression" : "Entered_By"
+          },
+          "alias" : "Entered_By",
+          "_row_id" : "230908374"
+        }, {
+          "expression" : {
+            "expression" : "Approved_By"
+          },
+          "alias" : "Approved_By",
+          "_row_id" : "2009907777"
+        }, {
+          "expression" : {
+            "expression" : "Account_Type"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "179989966"
+        }, {
+          "expression" : {
+            "expression" : "Account_Category"
+          },
+          "alias" : "Account_Category",
+          "_row_id" : "1862321934"
+        }, {
+          "expression" : {
+            "expression" : "Account_Subcategory"
+          },
+          "alias" : "Account_Subcategory",
+          "_row_id" : "208394121"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "lm8boRLl2jGxeQTvBXOUo$$XxSheeGY4wFsI_Ih6VTY_",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2" : {
+      "id" : "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "account_type_summaries",
+        "x" : 100,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Summarizes total debits and credits for each account type.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "any_value(Account_Type)"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "1710962128"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Debit)"
+          },
+          "alias" : "SUM_Debit",
+          "_row_id" : "yYyQthOxZO"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Credit)"
+          },
+          "alias" : "SUM_Credit",
+          "_row_id" : "RnBA725eIP"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8##Account_Type", "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8##Debit", "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8##Credit" ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "Account_Type"
+          },
+          "alias" : "",
+          "_row_id" : "KfZnEYiBwC"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "9AVmLk0R_S-d24qjgwz_7$$vGj_9a6grgWSl-48h97Qf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ"
+    },
+    "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T" : {
+      "id" : "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "combined_coa_lists",
+        "x" : 280,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Merges two lists of chart of accounts to create a combined record of all accounts.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : true,
+        "useMinus" : false,
+        "inputAliases" : [ "in0", "in1" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W13xpLug8InOUjwyxwA-l$$0LY_pxzyean5gNzLUWKw4",
+          "slug" : "in0"
+        }, {
+          "id" : "JFDUodQSIhBMCEq2hd73Y$$1ndjJGdn-E_qNzbgRUtoS",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "8ucDVctNjrWOs_d-Z8Kfe$$FVOypaZOfHx-PXbu5hIwO",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P"
+    },
+    "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P" : {
+      "id" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P",
+      "component" : "VisualGroup",
+      "metadata" : {
+        "label" : "COA",
+        "x" : -1080,
+        "y" : -220,
+        "height" : 498.3999938964844,
+        "width" : 976,
+        "comment" : "Groups related pipeline components for better organization and clarity.",
+        "autoUpdateComment" : true
+      },
+      "properties" : { },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      }
+    },
+    "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C" : {
+      "id" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "Union_1",
+        "x" : 300,
+        "y" : 160,
+        "phase" : 0,
+        "comment" : "Combines account summaries with debit and credit totals for a unified financial overview.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : false,
+        "useMinus" : false,
+        "inputAliases" : [ "in0", "in1" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iRJvIxHVrPvu5HpajGCso$$ZIGJBJ4YNqJ_ZB5jJgr_F",
+          "slug" : "in0"
+        }, {
+          "id" : "GIhTj2yRENtaRkU0RGetE$$G54lo6hU0UZwr0egt5teO",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "L8WVFw1pSYTLdOkBUJlT1$$SZlZMSJ_cYP_gTI5e7uT2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      },
+      "parent" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ"
+    },
+    "iwEJimgZLBOXGXeD8fmkY$$NkgwD9w8a_ADAyOvU1AE7" : {
+      "id" : "iwEJimgZLBOXGXeD8fmkY$$NkgwD9w8a_ADAyOvU1AE7",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_2",
+        "x" : 60,
+        "y" : 80,
+        "height" : 39.999977111816406,
+        "width" : 220.0000457763672,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "**Debit / Credit Reconciliation**"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "parent" : "UeOiW8iNb40u7-meoVmRl$$u8fiWEcqqf_OURcvW1EZQ"
+    },
+    "QgahqJy1MgNtQTdzDPr8j$$4tBOmbqLoWqM7IzQXMsKN" : {
+      "id" : "QgahqJy1MgNtQTdzDPr8j$$4tBOmbqLoWqM7IzQXMsKN",
+      "component" : "Comment",
+      "metadata" : {
+        "label" : "Comment_6",
+        "x" : 700,
+        "y" : 280,
+        "height" : 60.00000762939453,
+        "width" : 219.9999237060547,
+        "phase" : 0
+      },
+      "properties" : {
+        "comment" : "Contains account type rule statement (reformat gem)",
+        "connectedNodes" : [ ]
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ]
+      },
+      "parent" : "f7108SqACTdozwfSVxxdF$$-TgjuMglZ2ZnC6YchmW3P"
+    }
+  },
+  "connections" : [ {
+    "id" : "zZlNvtT5VRFCp73MCUQjS",
+    "source" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "sourcePort" : "w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+    "target" : "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp",
+    "targetPort" : "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww"
+  }, {
+    "id" : "oUIyB6zfnyOgRIzwY9Mjt",
+    "source" : "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L",
+    "sourcePort" : "kJj2wUJANAzr8W_gizPap$$PIud2dbG1KkD3bTGttI0M",
+    "target" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+    "targetPort" : "RLO55X1dNwF1YzQNxcA5k$$37vWltSynmTmlxcD8wQzZ"
+  }, {
+    "id" : "LItm0lDIED3Cf_QsRn4k5",
+    "source" : "hpp2UdS1dOA8Df7alwZyw$$mUx0l3fTj04AsH9OIgPO4",
+    "sourcePort" : "2l6wjlZdDSwg3z6Afayl0$$NcFv3FVqyiWbQuZf9LUj-",
+    "target" : "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T",
+    "targetPort" : "W13xpLug8InOUjwyxwA-l$$0LY_pxzyean5gNzLUWKw4"
+  }, {
+    "id" : "tFTONaq6q0YikkccDb3Hd",
+    "source" : "8k9R-ob-nn76CXk-Dghtl$$MjRq1xCLmwYIypQYS4Eq9",
+    "sourcePort" : "CDML-7jdaVahn43G1NppU$$_O6h0kL0IoWa2hJlVXWPO",
+    "target" : "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T",
+    "targetPort" : "JFDUodQSIhBMCEq2hd73Y$$1ndjJGdn-E_qNzbgRUtoS"
+  }, {
+    "id" : "Wov2JtE_LmIQqLnlu6R9L",
+    "source" : "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T",
+    "sourcePort" : "8ucDVctNjrWOs_d-Z8Kfe$$FVOypaZOfHx-PXbu5hIwO",
+    "target" : "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3",
+    "targetPort" : "0FYLPMZlRWuFo9Sj_0MiK$$WTAHTKFSwuQPs8DTZ12y8"
+  }, {
+    "id" : "whRK4pJKp92Yj0vwVcHB1",
+    "source" : "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3",
+    "sourcePort" : "q_mW5WLxflWXBxIRu_eDt$$k7vGb9p-nQ4liY1z8u5i7",
+    "target" : "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM",
+    "targetPort" : "DJw3o8SLRTvyCCZQgSyjg$$0Gc77lVYc-tFjF-YChzj0"
+  }, {
+    "id" : "XgvcaBM2G47l6QXPpHLp3",
+    "source" : "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM",
+    "sourcePort" : "Gncr10CswdyAOfcqm9haL$$5FLZ1c6uW-H7rhirhY_Kq",
+    "target" : "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr",
+    "targetPort" : "wVyVFwXXtCtlqOtjtAihM$$8s6wtk3koALYOpBipJHY_"
+  }, {
+    "id" : "INGUX-cYV8sqcrGB5pPhk",
+    "source" : "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr",
+    "sourcePort" : "a4-eeHE8Ztp6fQnBwKX7Q$$tZTYJzLU3Rbb9J0v6tkwl",
+    "target" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "targetPort" : "7q8tvk2SuB04rI63PB7Kg$$ARPEjVFlu9m8Yp3b1-jJH"
+  }, {
+    "id" : "h8pTAA_HRQqZuQJ9Y3V1j",
+    "source" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "sourcePort" : "w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+    "target" : "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2",
+    "targetPort" : "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8"
+  }, {
+    "id" : "qoGM1TGOPp8KIMYhYkF1o",
+    "source" : "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2",
+    "sourcePort" : "9AVmLk0R_S-d24qjgwz_7$$vGj_9a6grgWSl-48h97Qf",
+    "target" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+    "targetPort" : "iRJvIxHVrPvu5HpajGCso$$ZIGJBJ4YNqJ_ZB5jJgr_F"
+  }, {
+    "id" : "jPKwILYkUfUjL1ROLZk-s",
+    "source" : "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp",
+    "sourcePort" : "KUrUS_qDy3ynSJwHRY6jt$$HGpoTtfYo78BJVjloQB1O",
+    "target" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+    "targetPort" : "GIhTj2yRENtaRkU0RGetE$$G54lo6hU0UZwr0egt5teO"
+  }, {
+    "id" : "dwwV8C_IORiGwlwA25IHL",
+    "source" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+    "sourcePort" : "L8WVFw1pSYTLdOkBUJlT1$$SZlZMSJ_cYP_gTI5e7uT2",
+    "target" : "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L",
+    "targetPort" : "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF"
+  }, {
+    "id" : "vgNEnHjqdWgsB-vO38FUc",
+    "source" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "sourcePort" : "w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+    "target" : "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve",
+    "targetPort" : "WZA0vHiLmG4D9gThDlsph$$5ScL-VFAt35KRhhBy1os-"
+  }, {
+    "id" : "sUcBrrmpUZryJh7fBT1sH",
+    "source" : "uNefGD-ihpuwdJoRDHxfP$$RnFlJnm3qi-3R6tYkBEsG",
+    "sourcePort" : "K9bIa7yy__81G8F71JDDp$$WRHN2oLP1an-Qt2TYXuPP",
+    "target" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "targetPort" : "adiNRBkhkDRsMcGqxm5gw$$b9IYO_-HrUL63INl99sfF"
+  }, {
+    "id" : "UcEWvFv1oarY77gZf0qh-",
+    "source" : "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve",
+    "sourcePort" : "lm8boRLl2jGxeQTvBXOUo$$XxSheeGY4wFsI_Ih6VTY_",
+    "target" : "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097",
+    "targetPort" : "V7ml5ls2pNt6dKzn4Uzp6$$-DiD0i646a67IsPtTQ4Iy"
+  } ],
+  "component" : "Pipeline"
+}

@@ -1,0 +1,305 @@
+---
+version: 2
+sources:
+- name: "zurich_pov_general_ledger"
+  database: "zurich_pov"
+  schema: "general_ledger"
+  config:
+    tags:
+    - "source:zurich_pov_general_ledger"
+  tables:
+  - name: "master_coa2_customer_abc"
+    description: "Comprehensive chart of accounts supporting financial reporting and\
+      \ regulatory compliance."
+    columns:
+    - name: "Account_Number"
+      description: "Unique number assigned to each customer account."
+      dataType:
+        type: "Bigint"
+    - name: "Account_Title"
+      description: "Official name or title of the customer account."
+      dataType:
+        type: "String"
+    - name: "Account_Type"
+      description: "Classification of the account based on its financial nature."
+      dataType:
+        type: "String"
+    - name: "Account_Category"
+      description: "Broad grouping of accounts for financial reporting."
+      dataType:
+        type: "String"
+    - name: "Account_Subcategory"
+      description: "More detailed classification within the main account category."
+      dataType:
+        type: "String"
+    - name: "IFRS_Code"
+      description: "The accounting code assigned to the account as per International\
+        \ Financial Reporting Standards."
+      dataType:
+        type: "String"
+    - name: "GAAP_Code"
+      description: "The accounting code assigned to the account as per Generally Accepted\
+        \ Accounting Principles."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "gl_customer_abc"
+    description: "Captures financial transactions for customers, supporting project\
+      \ tracking, cost management, and currency reporting."
+    config:
+      tags:
+      - "pipeline:gl_reconciliation"
+    columns:
+    - name: "Account_Number"
+      description: "Unique number assigned to identify each customer account."
+      dataType:
+        type: "Bigint"
+    - name: "Account_Title"
+      description: "Name or title of the customer account."
+      dataType:
+        type: "String"
+    - name: "Entry_Date"
+      description: "Date when the transaction was recorded in the account."
+      dataType:
+        type: "Date"
+    - name: "Transaction_ID"
+      description: "Unique identifier for each transaction in the account."
+      dataType:
+        type: "String"
+    - name: "Transaction_Type"
+      description: "Category or nature of the transaction, such as deposit or withdrawal."
+      dataType:
+        type: "String"
+    - name: "Memo"
+      description: "Description or notes about the financial transaction."
+      dataType:
+        type: "String"
+    - name: "Debit"
+      description: "Amount deducted from the account for the transaction."
+      dataType:
+        type: "Double"
+    - name: "Credit"
+      description: "Amount added to the account for the transaction."
+      dataType:
+        type: "Double"
+    - name: "FX_Currency"
+      description: "Foreign currency used in the transaction."
+      dataType:
+        type: "String"
+    - name: "FX_Rate"
+      description: "Exchange rate applied for the foreign currency transaction."
+      dataType:
+        type: "Double"
+    - name: "Cost_Center_Code"
+      description: "Code identifying the specific cost center responsible for the\
+        \ transaction."
+      dataType:
+        type: "String"
+    - name: "Cost_Center_Name"
+      description: "Name of the cost center responsible for the transaction."
+      dataType:
+        type: "String"
+    - name: "Project_Code"
+      description: "Unique code assigned to the project associated with the transaction."
+      dataType:
+        type: "String"
+    - name: "Project_Name"
+      description: "Name of the project associated with the transaction."
+      dataType:
+        type: "String"
+    - name: "Entered_By"
+      description: "Name of the person who entered the transaction record."
+      dataType:
+        type: "String"
+    - name: "Approved_By"
+      description: "Name of the person who authorized the project."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "master_coa_list"
+    description: "Comprehensive list of account numbers and names used for financial\
+      \ reporting and account management."
+    config:
+      tags:
+      - "pipeline:gl_reconciliation"
+    columns:
+    - name: "Account_Number"
+      description: "Unique identifier for each account in the chart of accounts."
+      dataType:
+        type: "Bigint"
+    - name: "Name"
+      description: "Name of the account as listed in the chart of accounts."
+      dataType:
+        type: "String"
+    - name: "Value"
+      description: "Current balance or value associated with the account."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "master_coa_list2"
+    description: "Comprehensive list of account numbers and associated details for\
+      \ financial reporting and analysis."
+    config:
+      tags:
+      - "pipeline:gl_reconciliation"
+    columns:
+    - name: "Account_Number"
+      description: "Unique identifier assigned to each account in the chart of accounts."
+      dataType:
+        type: "Bigint"
+    - name: "Name"
+      description: "Name or title of the account as listed in the chart of accounts."
+      dataType:
+        type: "String"
+    - name: "Value"
+      description: "Current balance or amount associated with the account."
+      dataType:
+        type: "String"
+    type: "table"
+  - name: "customer_abc_standardized_gl"
+    description: "Standardized general ledger data supporting financial reporting,\
+      \ project tracking, and compliance analysis."
+    config:
+      tags:
+      - "pipeline:gl_reconciliation"
+    columns:
+    - name: "Account_Number"
+      description: "Unique identifier assigned to each account in the general ledger."
+      dataType:
+        type: "String"
+    - name: "Account_Title"
+      description: "Name of the account describing its purpose in the ledger."
+      dataType:
+        type: "String"
+    - name: "Entry_Date"
+      description: "Date when the transaction was recorded in the ledger."
+      dataType:
+        type: "Date"
+    - name: "Transaction_ID"
+      description: "Unique reference number for each transaction entry."
+      dataType:
+        type: "String"
+    - name: "Transaction_Type"
+      description: "Category describing the nature of the transaction, such as payment,\
+        \ invoice, or amortization."
+      dataType:
+        type: "String"
+    - name: "Memo"
+      description: "Description or notes about the transaction, providing business\
+        \ context."
+      dataType:
+        type: "String"
+    - name: "Debit"
+      description: "Amount debited from the account for the transaction."
+      dataType:
+        type: "Double"
+    - name: "Credit"
+      description: "Amount credited to the account for the transaction."
+      dataType:
+        type: "Double"
+    - name: "FX_Currency"
+      description: "Foreign currency code used in the transaction."
+      dataType:
+        type: "String"
+    - name: "FX_Rate"
+      description: "Exchange rate applied to convert the foreign currency to the base\
+        \ currency."
+      dataType:
+        type: "Double"
+    - name: "Cost_Center_Code"
+      description: "Code identifying the department or unit responsible for the transaction."
+      dataType:
+        type: "String"
+    - name: "Cost_Center_Name"
+      description: "Name of the department or unit responsible for the transaction."
+      dataType:
+        type: "String"
+    - name: "Project_Code"
+      description: "Unique code assigned to the project associated with the transaction."
+      dataType:
+        type: "String"
+    - name: "Project_Name"
+      description: "Name of the project linked to the transaction."
+      dataType:
+        type: "String"
+    - name: "Entered_By"
+      description: "Name of the person who recorded the transaction."
+      dataType:
+        type: "String"
+    - name: "Approved_By"
+      description: "Name of the person who authorized the account entry."
+      dataType:
+        type: "String"
+    - name: "Account_Type"
+      description: "Classification of the account as either Asset or Liability."
+      dataType:
+        type: "String"
+    - name: "Account_Category"
+      description: "Main category of the account, such as Current Asset or Current\
+        \ Liability."
+      dataType:
+        type: "String"
+    - name: "Account_Subcategory"
+      description: "Detailed subcategory within the main account category, such as\
+        \ Prepaid Expenses or Accounts Payable."
+      dataType:
+        type: "String"
+    type: "view"
+  - name: "rec_output"
+    description: "Summarized account balances and validation results for financial\
+      \ reconciliation and reporting."
+    config:
+      tags:
+      - "pipeline:gl_reconciliation"
+      - "table:rec_output"
+    columns:
+    - name: "Account_Type"
+      description: "Category of the account, such as savings or current, used for\
+        \ financial reporting."
+      tags:
+      - "column:Account_Type"
+      tests:
+      - unique:
+          config:
+            fail_calc: "count(*)"
+            tags:
+            - "test:unique"
+      dataType:
+        type: "String"
+    - name: "SUM_Debit"
+      description: "Total amount debited from the account over a period."
+      dataType:
+        type: "Double"
+    - name: "SUM_Credit"
+      description: "Total amount credited to the account over a period."
+      dataType:
+        type: "Double"
+    - name: "Rounded_Diff"
+      description: "Difference between total credits and debits, rounded for clarity."
+      tags:
+      - "column:Rounded_Diff"
+      tests:
+      - not_null:
+          config:
+            fail_calc: "count(*)"
+            tags:
+            - "test:not_null"
+      dataType:
+        type: "Double"
+    - name: "VALIDATION_RESULT"
+      description: "Outcome of the account validation process, indicating if records\
+        \ are accurate or need review."
+      tags:
+      - "column:VALIDATION_RESULT"
+      tests:
+      - accepted_values:
+          config:
+            fail_calc: "count(*)"
+            severity: "warn"
+            tags:
+            - "test:accepted_values"
+          values:
+          - "Valid"
+      dataType:
+        type: "String"
+    type: "view"

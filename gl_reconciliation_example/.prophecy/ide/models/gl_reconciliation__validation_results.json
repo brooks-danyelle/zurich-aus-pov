@@ -1,0 +1,415 @@
+{
+  "id" : "gl_reconciliation__validation_results",
+  "metainfo" : {
+    "label" : "gl_reconciliation__validation_results",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "alias" : "\"rec_output\"",
+        "materialized" : "view",
+        "database" : "\"zurich_pov\"",
+        "schema" : "\"general_ledger\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw" : {
+      "id" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "validation_results",
+        "phase" : 0
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM transaction_validation\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RLO55X1dNwF1YzQNxcA5k$$37vWltSynmTmlxcD8wQzZ",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "NEqoUnITa_9zjXs6i768b$$h49acT1ThzKUCpzsSXpf9",
+          "slug" : "out",
+          "dataExplorerProps" : {
+            "visualization" : {
+              "tableId" : "",
+              "title" : "Charts Title",
+              "type" : "line",
+              "config" : {
+                "xAxisColumn" : "Account_Type",
+                "yAxisColumn" : [ {
+                  "name" : "SUM_Debit",
+                  "agg" : "Sum",
+                  "color" : "#4c4ddc"
+                } ],
+                "showLegend" : true,
+                "showTooltip" : true,
+                "barAndLineConfig" : {
+                  "showGrid" : true
+                },
+                "areaConfig" : {
+                  "showGrid" : true,
+                  "stacked" : false,
+                  "showGradient" : true
+                },
+                "pieConfig" : {
+                  "angle" : "full",
+                  "chartStyle" : "pie",
+                  "innerRadius" : 0,
+                  "outerRadius" : 100,
+                  "centerX" : 50,
+                  "centerY" : 50
+                },
+                "candlestickConfig" : {
+                  "openColumn" : "",
+                  "closeColumn" : ""
+                },
+                "mapConfig" : {
+                  "mapType" : "marker",
+                  "fitBounds" : false,
+                  "markerConfig" : {
+                    "options" : {
+                      "pathOptions" : {
+                        "color" : "black",
+                        "fillColor" : "black",
+                        "fillOpacity" : 0.1
+                      },
+                      "showTooltip" : true,
+                      "showLabel" : true
+                    },
+                    "columns" : {
+                      "column" : "",
+                      "labelColumn" : "",
+                      "tooltipColumns" : [ "Account_Type", "SUM_Debit", "SUM_Credit", "Rounded_Diff", "VALIDATION_RESULT" ]
+                    }
+                  },
+                  "displacementConfig" : {
+                    "options" : {
+                      "pathOptions" : {
+                        "color" : "blue",
+                        "weight" : 1.5
+                      },
+                      "showArrow" : true
+                    },
+                    "columns" : {
+                      "sourceColumn" : "",
+                      "sourceLabelColumn" : "",
+                      "destinationColumn" : "",
+                      "destinationLabelColumn" : "",
+                      "tooltipColumns" : [ "Account_Type", "SUM_Debit", "SUM_Credit", "Rounded_Diff", "VALIDATION_RESULT" ]
+                    }
+                  }
+                },
+                "scatterConfig" : {
+                  "series" : [ ],
+                  "type" : "Scatter"
+                },
+                "yAxisConfig" : { },
+                "invalidConfig" : false
+              },
+              "errors" : { }
+            },
+            "filter" : { },
+            "sorts" : [ ]
+          }
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_" : {
+      "id" : "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "joined_data"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ ref('gl_reconciliation__joined_data') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0",
+          "dataExplorerProps" : {
+            "sorts" : [ ],
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ {
+                "lhs" : {
+                  "type" : "Field",
+                  "value" : "Transaction_ID"
+                },
+                "type" : "Binary",
+                "op" : "=",
+                "rhs" : {
+                  "type" : "Literal",
+                  "value" : "'TX880929'"
+                }
+              } ]
+            }
+          }
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp" : {
+      "id" : "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "total_debits_credits",
+        "x" : 100,
+        "y" : 340,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww##Debit", "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww##Credit" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "'Net'"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "5mjoE-UE_U"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Debit)"
+          },
+          "alias" : "SUM_Debit",
+          "_row_id" : "1504774799"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Credit)"
+          },
+          "alias" : "SUM_Credit",
+          "_row_id" : "1633886328"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww",
+          "slug" : "joined_data"
+        } ],
+        "outputs" : [ {
+          "id" : "KUrUS_qDy3ynSJwHRY6jt$$HGpoTtfYo78BJVjloQB1O",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L" : {
+      "id" : "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "transaction_validation",
+        "x" : 500,
+        "y" : 160,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF##Account_Type", "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF##SUM_Debit", "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF##SUM_Credit" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "Account_Type"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "849896968"
+        }, {
+          "expression" : {
+            "expression" : "SUM_Debit"
+          },
+          "alias" : "SUM_Debit",
+          "_row_id" : "656027739"
+        }, {
+          "expression" : {
+            "expression" : "SUM_Credit"
+          },
+          "alias" : "SUM_Credit",
+          "_row_id" : "107878959"
+        }, {
+          "expression" : {
+            "expression" : "ROUND(SUM_Debit - SUM_Credit, 2)"
+          },
+          "alias" : "Rounded_Diff",
+          "_row_id" : "eN2QS_n6oK"
+        }, {
+          "expression" : {
+            "expression" : "CASE\n  WHEN SUM_Debit = SUM_Credit\n    THEN 'Valid  '\n  ELSE 'Invalid'\nEND"
+          },
+          "alias" : "VALIDATION_RESULT",
+          "_row_id" : "1839509659"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF",
+          "slug" : "total_debits_credits"
+        } ],
+        "outputs" : [ {
+          "id" : "kJj2wUJANAzr8W_gizPap$$PIud2dbG1KkD3bTGttI0M",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2" : {
+      "id" : "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "account_type_summaries",
+        "x" : 100,
+        "y" : 160,
+        "phase" : 0
+      },
+      "properties" : {
+        "aggregate" : [ {
+          "expression" : {
+            "expression" : "any_value(Account_Type)"
+          },
+          "alias" : "Account_Type",
+          "_row_id" : "1710962128"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Debit)"
+          },
+          "alias" : "SUM_Debit",
+          "_row_id" : "yYyQthOxZO"
+        }, {
+          "expression" : {
+            "expression" : "SUM(Credit)"
+          },
+          "alias" : "SUM_Credit",
+          "_row_id" : "RnBA725eIP"
+        } ],
+        "allowSelection" : true,
+        "condition" : {
+          "expression" : ""
+        },
+        "activeTab" : "aggregate",
+        "columnsSelector" : [ "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8##Account_Type", "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8##Debit", "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8##Credit" ],
+        "groupBy" : [ {
+          "expression" : {
+            "expression" : "Account_Type"
+          },
+          "alias" : "",
+          "_row_id" : "KfZnEYiBwC"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "9AVmLk0R_S-d24qjgwz_7$$vGj_9a6grgWSl-48h97Qf",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C" : {
+      "id" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+      "component" : "Union",
+      "metadata" : {
+        "label" : "Union_1",
+        "x" : 300,
+        "y" : 160,
+        "phase" : 0
+      },
+      "properties" : {
+        "operationType" : "union",
+        "preserveDuplicates" : false,
+        "useMinus" : false,
+        "inputAliases" : [ "in0", "in1" ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iRJvIxHVrPvu5HpajGCso$$ZIGJBJ4YNqJ_ZB5jJgr_F",
+          "slug" : "in0"
+        }, {
+          "id" : "GIhTj2yRENtaRkU0RGetE$$G54lo6hU0UZwr0egt5teO",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "L8WVFw1pSYTLdOkBUJlT1$$SZlZMSJ_cYP_gTI5e7uT2",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "oUIyB6zfnyOgRIzwY9Mjt",
+    "source" : "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L",
+    "sourcePort" : "kJj2wUJANAzr8W_gizPap$$PIud2dbG1KkD3bTGttI0M",
+    "target" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+    "targetPort" : "RLO55X1dNwF1YzQNxcA5k$$37vWltSynmTmlxcD8wQzZ",
+    "isWireless" : false
+  }, {
+    "id" : "dwwV8C_IORiGwlwA25IHL",
+    "source" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+    "sourcePort" : "L8WVFw1pSYTLdOkBUJlT1$$SZlZMSJ_cYP_gTI5e7uT2",
+    "target" : "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L",
+    "targetPort" : "D8rdarJgvBmO2BKGB8ZZA$$cbkCFjkH6uNqWJzSExxbF",
+    "isWireless" : false
+  }, {
+    "id" : "qoGM1TGOPp8KIMYhYkF1o",
+    "source" : "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2",
+    "sourcePort" : "9AVmLk0R_S-d24qjgwz_7$$vGj_9a6grgWSl-48h97Qf",
+    "target" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+    "targetPort" : "iRJvIxHVrPvu5HpajGCso$$ZIGJBJ4YNqJ_ZB5jJgr_F",
+    "isWireless" : false
+  }, {
+    "id" : "jPKwILYkUfUjL1ROLZk-s",
+    "source" : "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp",
+    "sourcePort" : "KUrUS_qDy3ynSJwHRY6jt$$HGpoTtfYo78BJVjloQB1O",
+    "target" : "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C",
+    "targetPort" : "GIhTj2yRENtaRkU0RGetE$$G54lo6hU0UZwr0egt5teO",
+    "isWireless" : false
+  }, {
+    "id" : "h8pTAA_HRQqZuQJ9Y3V1j",
+    "source" : "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+    "sourcePort" : "output_port_0",
+    "target" : "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2",
+    "targetPort" : "Myi_MOu5qwuZyswMvaaKz$$5A7WYleAxYQI2WBgQPnW8",
+    "isWireless" : false
+  }, {
+    "id" : "zZlNvtT5VRFCp73MCUQjS",
+    "source" : "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_",
+    "sourcePort" : "output_port_0",
+    "target" : "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp",
+    "targetPort" : "7bwL1rl7_mo6oHlZ82xcj$$pm6MZQXy6exk-UFIvSYww",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

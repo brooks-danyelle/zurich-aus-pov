@@ -1,0 +1,9 @@
+{
+  "id" : "gl_reconciliation_analysis",
+  "metainfo" : {
+    "description" : "",
+    "pipelineId" : "gl_reconciliation",
+    "parameterSet" : ""
+  },
+  "instances" : { }
+}

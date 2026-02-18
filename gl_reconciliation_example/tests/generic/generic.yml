@@ -1,0 +1,18 @@
+---
+version: 2
+macros:
+- name: "test_table_has_records"
+  description: "This generic test confirms that the specified table/model has at least\
+    \ 1 record. The test fails if the table is empty (0 records).\n"
+  arguments:
+  - name: "model"
+    type: "relation"
+    description: "The table or model to check for records"
+  macroType: "expression"
+dataTests:
+- name: "table_has_records"
+  arguments:
+  - name: "model"
+    type: "table"
+    description: "{\"ProphecyType\": \"table\"}"
+  type: "generic"

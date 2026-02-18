@@ -1,0 +1,35 @@
+{
+  "name" : "gl_reconciliation_example",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "databricks",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "dependenciesContainer" : {
+    "dependencies" : { },
+    "prophecyProjectDependencies" : {
+      "https://github.com/prophecy-io/prophecy-basics" : "78064",
+      "https://github.com/prophecy-io/databricks-sql-spatial" : "47593"
+    },
+    "dependenciesMetadata" : {
+      "https://github.com/prophecy-io/prophecy-basics" : {
+        "autoUpgrade" : true
+      },
+      "https://github.com/prophecy-io/databricks-sql-spatial" : {
+        "autoUpgrade" : true
+      }
+    }
+  },
+  "entitiesToSync" : [ ],
+  "frontEndLanguage" : "sql",
+  "backEndLanguage" : "sql"
+}

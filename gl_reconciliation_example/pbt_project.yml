@@ -1,0 +1,393 @@
+name: gl_reconciliation_example
+description: ''
+version: 0.0.1
+author: brooks.danyelle@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2026-02-18 22:42:20'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels: {}
+sqlSnapshots: {}
+sqlTests:
+  .prophecy/metadata/sqltests/table_has_records:
+    name: table_has_records
+    description: null
+    author: yamamoto.kenpei+zurich@prophecy.io
+    files:
+    - tests/generic/table_has_records.sql
+    testType: GenericDataTest
+    createdAt: '2026-02-18 23:09:48'
+sqlMacros:
+  .prophecy/metadata/sqlmacros/generate_schema_name:
+    name: generate_schema_name
+    macroType: expression
+    description: null
+    author: brooks.danyelle@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - .prophecy/ide/macros/generate_schema_name.json
+    createdAt: '2026-02-18 22:42:22'
+  .prophecy/metadata/sqlmacros/prophecy_tmp_source:
+    name: prophecy_tmp_source
+    macroType: expression
+    description: null
+    author: brooks.danyelle@prophecy.io
+    files:
+    - macros/prophecy_tmp_source.sql
+    - .prophecy/ide/macros/prophecy_tmp_source.json
+    createdAt: '2026-02-18 22:43:17'
+sqlSeeds: {}
+sqlSources:
+  .prophecy/metadata/sqlsources/zurich_pov_general_ledger:
+    name: zurich_pov_general_ledger
+    description: null
+    author: brooks.danyelle@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2026-02-18 22:44:31'
+    tables:
+    - name: master_coa2_customer_abc
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: Account_Number
+          dataType:
+            type: Bigint
+          description: Unique number assigned to each customer account.
+        - name: Account_Title
+          dataType:
+            type: String
+          description: Official name or title of the customer account.
+        - name: Account_Type
+          dataType:
+            type: String
+          description: Classification of the account based on its financial nature.
+        - name: Account_Category
+          dataType:
+            type: String
+          description: Broad grouping of accounts for financial reporting.
+        - name: Account_Subcategory
+          dataType:
+            type: String
+          description: More detailed classification within the main account category.
+        - name: IFRS_Code
+          dataType:
+            type: String
+          description: The accounting code assigned to the account as per International
+            Financial Reporting Standards.
+        - name: GAAP_Code
+          dataType:
+            type: String
+          description: The accounting code assigned to the account as per Generally
+            Accepted Accounting Principles.
+      description: Comprehensive chart of accounts supporting financial reporting
+        and regulatory compliance.
+      author: brooks.danyelle@prophecy.io
+      createdAt: '2026-02-18 22:44:31'
+      tableType: table
+    - name: gl_customer_abc
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: Account_Number
+          dataType:
+            type: Bigint
+          description: Unique number assigned to identify each customer account.
+        - name: Account_Title
+          dataType:
+            type: String
+          description: Name or title of the customer account.
+        - name: Entry_Date
+          dataType:
+            type: Date
+          description: Date when the transaction was recorded in the account.
+        - name: Transaction_ID
+          dataType:
+            type: String
+          description: Unique identifier for each transaction in the account.
+        - name: Transaction_Type
+          dataType:
+            type: String
+          description: Category or nature of the transaction, such as deposit or withdrawal.
+        - name: Memo
+          dataType:
+            type: String
+          description: Description or notes about the financial transaction.
+        - name: Debit
+          dataType:
+            type: Double
+          description: Amount deducted from the account for the transaction.
+        - name: Credit
+          dataType:
+            type: Double
+          description: Amount added to the account for the transaction.
+        - name: FX_Currency
+          dataType:
+            type: String
+          description: Foreign currency used in the transaction.
+        - name: FX_Rate
+          dataType:
+            type: Double
+          description: Exchange rate applied for the foreign currency transaction.
+        - name: Cost_Center_Code
+          dataType:
+            type: String
+          description: Code identifying the specific cost center responsible for the
+            transaction.
+        - name: Cost_Center_Name
+          dataType:
+            type: String
+          description: Name of the cost center responsible for the transaction.
+        - name: Project_Code
+          dataType:
+            type: String
+          description: Unique code assigned to the project associated with the transaction.
+        - name: Project_Name
+          dataType:
+            type: String
+          description: Name of the project associated with the transaction.
+        - name: Entered_By
+          dataType:
+            type: String
+          description: Name of the person who entered the transaction record.
+        - name: Approved_By
+          dataType:
+            type: String
+          description: Name of the person who authorized the project.
+      description: Captures financial transactions for customers, supporting project
+        tracking, cost management, and currency reporting.
+      author: brooks.danyelle@prophecy.io
+      createdAt: '2026-02-18 22:46:36'
+      tableType: table
+    - name: master_coa_list
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: Account_Number
+          dataType:
+            type: Bigint
+          description: Unique identifier for each account in the chart of accounts.
+        - name: Name
+          dataType:
+            type: String
+          description: Name of the account as listed in the chart of accounts.
+        - name: Value
+          dataType:
+            type: String
+          description: Current balance or value associated with the account.
+      description: Comprehensive list of account numbers and names used for financial
+        reporting and account management.
+      author: brooks.danyelle@prophecy.io
+      createdAt: '2026-02-18 22:51:00'
+      tableType: table
+    - name: master_coa_list2
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: Account_Number
+          dataType:
+            type: Bigint
+          description: Unique identifier assigned to each account in the chart of
+            accounts.
+        - name: Name
+          dataType:
+            type: String
+          description: Name or title of the account as listed in the chart of accounts.
+        - name: Value
+          dataType:
+            type: String
+          description: Current balance or amount associated with the account.
+      description: Comprehensive list of account numbers and associated details for
+        financial reporting and analysis.
+      author: brooks.danyelle@prophecy.io
+      createdAt: '2026-02-18 22:51:46'
+      tableType: table
+    - name: customer_abc_standardized_gl
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: Account_Number
+          dataType:
+            type: String
+          description: Unique identifier assigned to each account in the general ledger.
+        - name: Account_Title
+          dataType:
+            type: String
+          description: Name of the account describing its purpose in the ledger.
+        - name: Entry_Date
+          dataType:
+            type: Date
+          description: Date when the transaction was recorded in the ledger.
+        - name: Transaction_ID
+          dataType:
+            type: String
+          description: Unique reference number for each transaction entry.
+        - name: Transaction_Type
+          dataType:
+            type: String
+          description: Category describing the nature of the transaction, such as
+            payment, invoice, or amortization.
+        - name: Memo
+          dataType:
+            type: String
+          description: Description or notes about the transaction, providing business
+            context.
+        - name: Debit
+          dataType:
+            type: Double
+          description: Amount debited from the account for the transaction.
+        - name: Credit
+          dataType:
+            type: Double
+          description: Amount credited to the account for the transaction.
+        - name: FX_Currency
+          dataType:
+            type: String
+          description: Foreign currency code used in the transaction.
+        - name: FX_Rate
+          dataType:
+            type: Double
+          description: Exchange rate applied to convert the foreign currency to the
+            base currency.
+        - name: Cost_Center_Code
+          dataType:
+            type: String
+          description: Code identifying the department or unit responsible for the
+            transaction.
+        - name: Cost_Center_Name
+          dataType:
+            type: String
+          description: Name of the department or unit responsible for the transaction.
+        - name: Project_Code
+          dataType:
+            type: String
+          description: Unique code assigned to the project associated with the transaction.
+        - name: Project_Name
+          dataType:
+            type: String
+          description: Name of the project linked to the transaction.
+        - name: Entered_By
+          dataType:
+            type: String
+          description: Name of the person who recorded the transaction.
+        - name: Approved_By
+          dataType:
+            type: String
+          description: Name of the person who authorized the account entry.
+        - name: Account_Type
+          dataType:
+            type: String
+          description: Classification of the account as either Asset or Liability.
+        - name: Account_Category
+          dataType:
+            type: String
+          description: Main category of the account, such as Current Asset or Current
+            Liability.
+        - name: Account_Subcategory
+          dataType:
+            type: String
+          description: Detailed subcategory within the main account category, such
+            as Prepaid Expenses or Accounts Payable.
+      description: Standardized general ledger data supporting financial reporting,
+        project tracking, and compliance analysis.
+      author: brooks.danyelle@prophecy.io
+      createdAt: '2026-02-18 22:58:46'
+      tableType: view
+    - name: rec_output
+      schema:
+        entityType: ''
+        providerType: databricks
+        fields:
+        - name: Account_Type
+          dataType:
+            type: String
+          description: Category of the account, such as savings or current, used for
+            financial reporting.
+        - name: SUM_Debit
+          dataType:
+            type: Double
+          description: Total amount debited from the account over a period.
+        - name: SUM_Credit
+          dataType:
+            type: Double
+          description: Total amount credited to the account over a period.
+        - name: Rounded_Diff
+          dataType:
+            type: Double
+          description: Difference between total credits and debits, rounded for clarity.
+        - name: VALIDATION_RESULT
+          dataType:
+            type: String
+          description: Outcome of the account validation process, indicating if records
+            are accurate or need review.
+      description: Summarized account balances and validation results for financial
+        reconciliation and reporting.
+      author: brooks.danyelle@prophecy.io
+      createdAt: '2026-02-18 23:00:15'
+      tableType: view
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: brooks.danyelle@prophecy.io
+  createdAt: '2026-02-18 22:42:20'
+dependencies: []
+projectDependencies:
+  '78064':
+    projectUID: 78064
+    projectName: prophecy_basics
+    repositoryPath: gitUri=https://github.com/prophecy-io/prophecy-basics&subPath=
+    version: 1.0.7
+    isDefault: true
+    author: null
+    createdAt: '2026-02-18 22:42:18'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}
+projectConfigurations: {}
+sqlOrchestratorPipelines:
+  .prophecy/metadata/sqlorchestratorpipeline/gl_reconciliation:
+    name: gl_reconciliation
+    schema: null
+    description: null
+    author: brooks.danyelle@prophecy.io
+    files:
+    - .prophecy/ide/pipelines/gl_reconciliation.json
+    - pipelines/gl_reconciliation.py
+    - models/gl_reconciliation/gl_reconciliation__validation_results.sql
+    - models/gl_reconciliation/gl_reconciliation__joined_data.sql
+    - models/gl_reconciliation/schema.yml
+    - models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql
+    createdAt: '2026-02-18 22:43:17'
+sqlBusinessApps:
+  .prophecy/metadata/sqlbusinessapp/gl_reconciliation_analysis:
+    name: gl_reconciliation_analysis
+    schema: null
+    description: null
+    author: brooks.danyelle@prophecy.io
+    files:
+    - apps/gl_reconciliation_analysis.json
+    createdAt: '2026-02-18 22:43:18'
+    sqlOrchestrationPipelineName: gl_reconciliation

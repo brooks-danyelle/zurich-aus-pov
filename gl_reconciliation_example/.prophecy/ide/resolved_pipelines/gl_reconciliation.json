@@ -1,0 +1,252 @@
+{
+  "id" : "gl_reconciliation",
+  "metainfo" : {
+    "label" : "gl_reconciliation",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ ]
+      }
+    },
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false,
+    "processesVsModelFiles" : {
+      "8k9R-ob-nn76CXk-Dghtl$$MjRq1xCLmwYIypQYS4Eq9" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "hpp2UdS1dOA8Df7alwZyw$$mUx0l3fTj04AsH9OIgPO4" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_" : "models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql",
+      "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097" : "models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql",
+      "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "uNefGD-ihpuwdJoRDHxfP$$RnFlJnm3qi-3R6tYkBEsG" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve" : "models/gl_reconciliation/gl_reconciliation__financial_transactions_ledger.sql",
+      "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql",
+      "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T" : "models/gl_reconciliation/gl_reconciliation__joined_data.sql",
+      "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C" : "models/gl_reconciliation/gl_reconciliation__validation_results.sql"
+    }
+  },
+  "processes" : {
+    "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e" : {
+      "id" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "gl_reconciliation__joined_data",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "gl_reconciliation__joined_data"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_", "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e", "uNefGD-ihpuwdJoRDHxfP$$RnFlJnm3qi-3R6tYkBEsG", "Pg-sLQTKmp5Iq4oQSGIiG$$mVeKMWjAsVThY4FmfoUDr", "l33Iy22uXp98UCOpnOFqL$$fgerBeGsLi682CxJ0cEBM", "h7Ns8_UQD_eRbBXhRoHoW$$6SDFgr4giqKZ4IXOG7vY3", "K7yZSvxFvPmJW-OfRDL1b$$yltMgHyCkdMlMarFEPb9T", "hpp2UdS1dOA8Df7alwZyw$$mUx0l3fTj04AsH9OIgPO4", "8k9R-ob-nn76CXk-Dghtl$$MjRq1xCLmwYIypQYS4Eq9" ],
+        "type" : "ephemeral",
+        "isTemporaryTable" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gl_reconciliation__joined_data_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "gl_reconciliation__joined_data_in_1",
+          "slug" : "in_1"
+        }, {
+          "id" : "gl_reconciliation__joined_data_in_2",
+          "slug" : "in_2"
+        }, {
+          "id" : "gl_reconciliation__joined_data_in_3",
+          "slug" : "in_3"
+        } ],
+        "outputs" : [ {
+          "id" : "gl_reconciliation__joined_data_out_0",
+          "slug" : "out_0",
+          "dataExplorerProps" : {
+            "sorts" : [ ],
+            "filter" : {
+              "type" : "Composite",
+              "op" : {
+                "type" : "AND"
+              },
+              "filters" : [ {
+                "lhs" : {
+                  "type" : "Field",
+                  "value" : "Transaction_ID"
+                },
+                "type" : "Binary",
+                "op" : "=",
+                "rhs" : {
+                  "type" : "Literal",
+                  "value" : "'TX880929'"
+                }
+              } ]
+            }
+          }
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw" : {
+      "id" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "gl_reconciliation__validation_results",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "gl_reconciliation__validation_results"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw", "sRFuCREgO6r-bNeXdWMUZ$$RfGgi9mKLL4TnuNa8gr7L", "F0qcGWP7pyFHQDfzulf6o$$cgL952lFjG_Q0YRQIMl2C", "EbwvmRlU0-jJ6muOh7rlB$$6fZa2eNks4lkDKSBrW3f2", "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_", "QlRtKw0FxVmAJyUfaNgoM$$ueTAP7SKUaFMp3GPj-rvp", "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_" ],
+        "type" : "view",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gl_reconciliation__validation_results_in_0",
+          "slug" : "in_0"
+        }, {
+          "id" : "gl_reconciliation__validation_results_in_1",
+          "slug" : "in_1"
+        } ],
+        "outputs" : [ {
+          "id" : "gl_reconciliation__validation_results_out_0",
+          "slug" : "out_0",
+          "dataExplorerProps" : {
+            "visualization" : {
+              "tableId" : "",
+              "title" : "Charts Title",
+              "type" : "line",
+              "config" : {
+                "xAxisColumn" : "Account_Type",
+                "yAxisColumn" : [ {
+                  "name" : "SUM_Debit",
+                  "agg" : "Sum",
+                  "color" : "#4c4ddc"
+                } ],
+                "showLegend" : true,
+                "showTooltip" : true,
+                "barAndLineConfig" : {
+                  "showGrid" : true
+                },
+                "areaConfig" : {
+                  "showGrid" : true,
+                  "stacked" : false,
+                  "showGradient" : true
+                },
+                "pieConfig" : {
+                  "angle" : "full",
+                  "chartStyle" : "pie",
+                  "innerRadius" : 0,
+                  "outerRadius" : 100,
+                  "centerX" : 50,
+                  "centerY" : 50
+                },
+                "candlestickConfig" : {
+                  "openColumn" : "",
+                  "closeColumn" : ""
+                },
+                "mapConfig" : {
+                  "mapType" : "marker",
+                  "fitBounds" : false,
+                  "markerConfig" : {
+                    "options" : {
+                      "pathOptions" : {
+                        "color" : "black",
+                        "fillColor" : "black",
+                        "fillOpacity" : 0.1
+                      },
+                      "showTooltip" : true,
+                      "showLabel" : true
+                    },
+                    "columns" : {
+                      "column" : "",
+                      "labelColumn" : "",
+                      "tooltipColumns" : [ "Account_Type", "SUM_Debit", "SUM_Credit", "Rounded_Diff", "VALIDATION_RESULT" ]
+                    }
+                  },
+                  "displacementConfig" : {
+                    "options" : {
+                      "pathOptions" : {
+                        "color" : "blue",
+                        "weight" : 1.5
+                      },
+                      "showArrow" : true
+                    },
+                    "columns" : {
+                      "sourceColumn" : "",
+                      "sourceLabelColumn" : "",
+                      "destinationColumn" : "",
+                      "destinationLabelColumn" : "",
+                      "tooltipColumns" : [ "Account_Type", "SUM_Debit", "SUM_Credit", "Rounded_Diff", "VALIDATION_RESULT" ]
+                    }
+                  }
+                },
+                "scatterConfig" : {
+                  "series" : [ ],
+                  "type" : "Scatter"
+                },
+                "yAxisConfig" : { },
+                "invalidConfig" : false
+              },
+              "errors" : { }
+            },
+            "filter" : { },
+            "sorts" : [ ]
+          }
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097" : {
+      "id" : "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097",
+      "component" : "Model",
+      "metadata" : {
+        "label" : "gl_reconciliation__financial_transactions_ledger",
+        "phase" : 0
+      },
+      "properties" : {
+        "modelName" : "gl_reconciliation__financial_transactions_ledger"
+      },
+      "visualMetaInfo" : {
+        "visualProcessIds" : [ "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097", "3ljYhVFOMjr2Y48DG5WKn$$8423EIAyS2RqxyXJAGCve", "joined_data_w06RsHWUHjWzc7kqUaOiv$$_VYTO6AMphVBzKKXVhy4_" ],
+        "type" : "view",
+        "isTemporaryTable" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "gl_reconciliation__financial_transactions_ledger_in_0",
+          "slug" : "in_0"
+        } ],
+        "outputs" : [ {
+          "id" : "gl_reconciliation__financial_transactions_ledger_out_0",
+          "slug" : "out_0"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "zZlNvtT5VRFCp73MCUQjS",
+    "source" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "sourcePort" : "gl_reconciliation__joined_data_out_0",
+    "target" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+    "targetPort" : "gl_reconciliation__validation_results_in_0"
+  }, {
+    "id" : "h8pTAA_HRQqZuQJ9Y3V1j",
+    "source" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "sourcePort" : "gl_reconciliation__joined_data_out_0",
+    "target" : "tcWLE4LUqqSYqlcwFtVcO$$Us_NWRphjSC3lyJvptbKw",
+    "targetPort" : "gl_reconciliation__validation_results_in_1"
+  }, {
+    "id" : "vgNEnHjqdWgsB-vO38FUc",
+    "source" : "KcSEzuotAkSH0Lki0cnb1$$7hSMUhsCcFv1T3ws8B02e",
+    "sourcePort" : "gl_reconciliation__joined_data_out_0",
+    "target" : "8GFsntu-ap32ayAXmjt_b$$igjlSNMgR7LVereeLM097",
+    "targetPort" : "gl_reconciliation__financial_transactions_ledger_in_0"
+  } ],
+  "component" : "Pipeline"
+}

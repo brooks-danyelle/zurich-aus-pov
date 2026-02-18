@@ -1,0 +1,10 @@
+---
+packages:
+- revision: "1.0.7"
+  git: "https://github.com/prophecy-io/prophecy-basics"
+  subdirectory: ""
+- revision: "0.0.6"
+  git: "https://github.com/prophecy-io/databricks-sql-spatial"
+  subdirectory: ""
+- package: "dbt-labs/dbt_utils"
+  version: ">1.0.0"

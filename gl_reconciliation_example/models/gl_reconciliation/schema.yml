@@ -1,0 +1,12 @@
+---
+version: 2
+models:
+- name: "gl_reconciliation__joined_data"
+  tags:
+  - "prophecy_temp"
+- name: "gl_reconciliation__validation_results"
+  tags:
+  - "prophecy_temp"
+- name: "gl_reconciliation__financial_transactions_ledger"
+  tags:
+  - "prophecy_temp"
