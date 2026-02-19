@@ -1,6 +1,6 @@
 name: gl_reconciliation_example
 description: ''
-version: '4'
+version: '5'
 author: brooks.danyelle@prophecy.io
 language: sql
 buildSystem: ''
