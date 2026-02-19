@@ -1,0 +1,29 @@
+providerType: "Databricks"
+fields:
+- name: "Name"
+  dataType:
+    type: "String"
+- name: "Engagement_category"
+  dataType:
+    type: "String"
+- name: "Salesforce_Account_Account_Name"
+  dataType:
+    type: "String"
+- name: "Salesforce_Account_Number_Of_Opportunities"
+  dataType:
+    type: "Bigint"
+- name: "Salesforce_Account_Open_To_Low_Code"
+  dataType:
+    type: "Boolean"
+- name: "Hubspot_Company_Last_Touch_Converting_Campaign"
+  dataType:
+    type: "String"
+- name: "Hubspot_Company_First_Touch_Converting_Campaign"
+  dataType:
+    type: "String"
+- name: "Salesforce_Account_Last_MQL_Date"
+  dataType:
+    type: "Bigint"
+- name: "FileName"
+  dataType:
+    type: "String"

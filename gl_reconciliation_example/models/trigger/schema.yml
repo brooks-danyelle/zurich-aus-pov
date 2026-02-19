@@ -1,0 +1,6 @@
+---
+version: 2
+models:
+- name: "trigger__ikea_account_filter"
+  tags:
+  - "prophecy_temp"
