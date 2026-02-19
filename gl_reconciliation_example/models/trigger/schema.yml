@@ -1,6 +1,6 @@
 ---
 version: 2
 models:
-- name: "trigger__ikea_account_filter"
+- name: "trigger__Reformat_1"
   tags:
   - "prophecy_temp"

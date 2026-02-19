@@ -56,9 +56,10 @@
     "isTranspiledPipeline" : false,
     "publishDiagnosticMetrics" : false,
     "processesVsModelFiles" : {
-      "ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t" : "models/trigger/trigger__ikea_account_filter.sql",
-      "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" : "models/trigger/trigger__ikea_account_filter.sql",
-      "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : "models/trigger/trigger__ikea_account_filter.sql"
+      "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY" : "models/trigger/trigger__Reformat_1.sql",
+      "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" : "models/trigger/trigger__Reformat_1.sql",
+      "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : "models/trigger/trigger__Reformat_1.sql",
+      "Reformat_1_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY" : "models/trigger/trigger__Reformat_1.sql"
     }
   },
   "processes" : {
@@ -174,7 +175,7 @@
       "kind" : "SFTPTarget",
       "metadata" : {
         "label" : "account_engagement_campaigns_csv",
-        "x" : 100,
+        "x" : 220,
         "y" : -140,
         "phase" : 0,
         "comment" : "Exports updated account records to a CSV file on an SFTP server for downstream business use.",
@@ -233,28 +234,28 @@
         "isCustomOutputSchema" : false
       }
     },
-    "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : {
-      "id" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY" : {
+      "id" : "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY",
       "component" : "Model",
       "metadata" : {
-        "label" : "trigger__ikea_account_filter",
+        "label" : "trigger__Reformat_1",
         "phase" : 0
       },
       "properties" : {
-        "modelName" : "trigger__ikea_account_filter"
+        "modelName" : "trigger__Reformat_1"
       },
       "visualMetaInfo" : {
-        "visualProcessIds" : [ "ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t", "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE", "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" ],
+        "visualProcessIds" : [ "Reformat_1_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY", "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY", "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE", "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" ],
         "type" : "ephemeral",
         "isTemporaryTable" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "trigger__ikea_account_filter_in_0",
+          "id" : "trigger__Reformat_1_in_0",
           "slug" : "in_0"
         } ],
         "outputs" : [ {
-          "id" : "trigger__ikea_account_filter_out_0",
+          "id" : "trigger__Reformat_1_out_0",
           "slug" : "out_0"
         } ],
         "isCustomOutputSchema" : false
@@ -265,12 +266,12 @@
     "id" : "GrI2mlHdu9UAfJuADVsom$$vt9aJ_uEwANjKURacgR52",
     "source" : "J-7BsZgEFEPgbv9GvBFB1",
     "sourcePort" : "59957f78-f565-4083-b557-ae9bed0af3a3",
-    "target" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
-    "targetPort" : "trigger__ikea_account_filter_in_0"
+    "target" : "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY",
+    "targetPort" : "trigger__Reformat_1_in_0"
   }, {
-    "id" : "MdIvNpxNvOapipNrtIpNR",
-    "source" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
-    "sourcePort" : "trigger__ikea_account_filter_out_0",
+    "id" : "7a3FmM126VapAklETUlox$$jWUN3C7ZhlZd_y4h-jfOo",
+    "source" : "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY",
+    "sourcePort" : "trigger__Reformat_1_out_0",
     "target" : "JK__5Y4EaDZWd0yDk9Smm$$wo4B1ewyMIoXYbqhibSa4",
     "targetPort" : "8V_QHfhaP98mBYMfGRbZD$$IXLs17jgsIUlAt2ibN8K6"
   } ],

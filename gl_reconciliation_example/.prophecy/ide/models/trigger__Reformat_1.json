@@ -1,0 +1,210 @@
+{
+  "id" : "trigger__Reformat_1",
+  "metainfo" : {
+    "label" : "trigger__Reformat_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"zurich_pov\"",
+        "schema" : "\"zurich\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "Reformat_1_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY" : {
+      "id" : "Reformat_1_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "Reformat_1"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM Reformat_1\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY" : {
+      "id" : "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "x" : 40,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Name", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Engagement_category", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Salesforce_Account_Account_Name", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Salesforce_Account_Number_Of_Opportunities", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Salesforce_Account_Open_To_Low_Code", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Hubspot_Company_Last_Touch_Converting_Campaign", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Hubspot_Company_First_Touch_Converting_Campaign", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##Salesforce_Account_Last_MQL_Date", "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul##FileName" ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "Name"
+          },
+          "alias" : "Name",
+          "_row_id" : "1673818757"
+        }, {
+          "expression" : {
+            "expression" : "Engagement_category"
+          },
+          "alias" : "Engagement_category",
+          "_row_id" : "1371833631"
+        }, {
+          "expression" : {
+            "expression" : "Salesforce_Account_Account_Name"
+          },
+          "alias" : "Salesforce_Account_Account_Name",
+          "_row_id" : "1916900679"
+        }, {
+          "expression" : {
+            "expression" : "Salesforce_Account_Number_Of_Opportunities"
+          },
+          "alias" : "Salesforce_Account_Number_Of_Opportunities",
+          "_row_id" : "1179202043"
+        }, {
+          "expression" : {
+            "expression" : "Salesforce_Account_Open_To_Low_Code"
+          },
+          "alias" : "Salesforce_Account_Open_To_Low_Code",
+          "_row_id" : "593132451"
+        }, {
+          "expression" : {
+            "expression" : "Hubspot_Company_Last_Touch_Converting_Campaign"
+          },
+          "alias" : "Hubspot_Company_Last_Touch_Converting_Campaign",
+          "_row_id" : "1840522372"
+        }, {
+          "expression" : {
+            "expression" : "Hubspot_Company_First_Touch_Converting_Campaign"
+          },
+          "alias" : "Hubspot_Company_First_Touch_Converting_Campaign",
+          "_row_id" : "1904224724"
+        }, {
+          "expression" : {
+            "expression" : "Salesforce_Account_Last_MQL_Date"
+          },
+          "alias" : "Salesforce_Account_Last_MQL_Date",
+          "_row_id" : "901107632"
+        }, {
+          "expression" : {
+            "expression" : "FileName"
+          },
+          "alias" : "File_Name",
+          "_row_id" : "1043816955"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : {
+      "id" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "ikea_account_filter",
+        "x" : -100,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_##Salesforce_Account_Account_Name" ],
+        "condition" : {
+          "expression" : "Salesforce_Account_Account_Name = 'IKEA'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" : {
+      "id" : "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "accounts_updated_csv_0"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('trigger', 'accounts_updated_csv_0') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY_Reformat_1_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY",
+    "source" : "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY",
+    "sourcePort" : "a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY",
+    "target" : "Reformat_1_a6tBB9OqlqPnW4JxgbkK1$$3cuXW9y7BIbV9xabbffYY",
+    "targetPort" : "input_port_1",
+    "isWireless" : false
+  }, {
+    "id" : "moyUd6IX12kx1lUAMD6ls",
+    "source" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "sourcePort" : "RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+    "target" : "ro0ZBv55UlWwqDDVZLnRt$$LWGXXkgrwFQWr9mYsYDIY",
+    "targetPort" : "IpejEFRoTFTc6Yp_Q9pD6$$bmCmxJmnMdK9Hu7Ui1jul",
+    "isWireless" : false
+  }, {
+    "id" : "GrI2mlHdu9UAfJuADVsom$$vt9aJ_uEwANjKURacgR52",
+    "source" : "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3",
+    "sourcePort" : "output_port_0",
+    "target" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "targetPort" : "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}
