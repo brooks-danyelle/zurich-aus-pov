@@ -1,6 +1,6 @@
 name: gl_reconciliation_example
 description: ''
-version: '3'
+version: '1'
 author: brooks.danyelle@prophecy.io
 language: sql
 buildSystem: ''
@@ -390,7 +390,7 @@ sqlOrchestratorPipelines:
     - pipelines/trigger.py
     - .prophecy/ide/pipelines/trigger.json
     - models/trigger/schema.yml
-    - models/trigger/trigger__Reformat_1.sql
+    - models/trigger/trigger__ikea_account_filter.sql
     createdAt: '2026-02-19 00:11:38'
 sqlBusinessApps:
   .prophecy/metadata/sqlbusinessapp/gl_reconciliation_analysis:

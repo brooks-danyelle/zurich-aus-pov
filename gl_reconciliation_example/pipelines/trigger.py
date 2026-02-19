@@ -55,9 +55,9 @@ with Pipeline(args) as pipeline:
         ),
         output_ports = None
     )
-    trigger__reformat_1 = Process(
-        name = "trigger__Reformat_1",
-        properties = ModelTransform(modelName = "trigger__Reformat_1")
+    trigger__ikea_account_filter = Process(
+        name = "trigger__ikea_account_filter",
+        properties = ModelTransform(modelName = "trigger__ikea_account_filter")
     )
-    accounts_updated_csv_0 >> trigger__reformat_1
-    trigger__reformat_1 >> account_engagement_campaigns_csv
+    accounts_updated_csv_0 >> trigger__ikea_account_filter
+    trigger__ikea_account_filter >> account_engagement_campaigns_csv
