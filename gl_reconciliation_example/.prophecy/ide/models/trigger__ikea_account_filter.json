@@ -1,0 +1,123 @@
+{
+  "id" : "trigger__ikea_account_filter",
+  "metainfo" : {
+    "label" : "trigger__ikea_account_filter",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "entityConfig" : {
+        "materialized" : "ephemeral",
+        "database" : "\"zurich_pov\"",
+        "schema" : "\"zurich\"",
+        "type" : "ModelConfig"
+      }
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t" : {
+      "id" : "ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "ikea_account_filter"
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "\nSELECT *\n\nFROM ikea_account_filter\n\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_1",
+          "slug" : "input_port_1"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_1",
+          "slug" : "output_port_1"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : {
+      "id" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "ikea_account_filter",
+        "x" : -100,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "columnsSelector" : [ "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_##Salesforce_Account_Account_Name" ],
+        "condition" : {
+          "expression" : "Salesforce_Account_Account_Name = 'IKEA'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" : {
+      "id" : "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "accounts_updated_csv_0"
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "output_port_0",
+          "id" : "output_port_0",
+          "language" : "sql",
+          "content" : "\nSELECT *\n\nFROM {{ prophecy_tmp_source('trigger', 'accounts_updated_csv_0') }}\n\n"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "input_port_0",
+          "slug" : "input_port_0"
+        } ],
+        "outputs" : [ {
+          "id" : "output_port_0",
+          "slug" : "output_port_0"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "conn_6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t_ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+    "source" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "sourcePort" : "RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+    "target" : "ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+    "targetPort" : "input_port_1",
+    "isWireless" : false
+  }, {
+    "id" : "GrI2mlHdu9UAfJuADVsom$$vt9aJ_uEwANjKURacgR52",
+    "source" : "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3",
+    "sourcePort" : "output_port_0",
+    "target" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "targetPort" : "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_",
+    "isWireless" : false
+  } ],
+  "component" : "Model"
+}

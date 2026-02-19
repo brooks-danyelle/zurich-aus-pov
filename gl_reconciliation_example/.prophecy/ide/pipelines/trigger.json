@@ -1,0 +1,280 @@
+{
+  "id" : "trigger",
+  "metainfo" : {
+    "label" : "trigger",
+    "autoLayout" : false,
+    "version" : 1,
+    "configuration" : {
+      "schema" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "sftp_processed_path",
+          "kind" : {
+            "type" : "string",
+            "value" : "'/prophecy-sftp/demo_files_processed/*'"
+          }
+        } ]
+      },
+      "parameterSets" : [ ]
+    },
+    "schedules" : [ {
+      "name" : "run on new file arrival and move to archive ",
+      "scheduleType" : "sensor",
+      "cron" : "* 0 2 * * * *",
+      "timeZone" : "America/Chicago",
+      "emailOnSuccess" : false,
+      "emailOnFailure" : false,
+      "emailOnStart" : false,
+      "emails" : [ ],
+      "enabled" : true,
+      "runGenericDataTests" : false,
+      "triggers" : {
+        "sftp_1_1_EGiyN0zJ9Pw4LJ207ohG6" : {
+          "connector" : {
+            "kind" : "sftp",
+            "properties" : {
+              "id" : "sftp_1"
+            },
+            "type" : "connector"
+          },
+          "properties" : {
+            "filePath" : "/prophecy-sftp/demo_files/*.csv",
+            "pollSensor" : {
+              "expBackOff" : true,
+              "mode" : "reschedule",
+              "pokeInterval" : 0,
+              "baseSensor" : {
+                "timeout" : 0
+              }
+            }
+          },
+          "sequenceId" : 1
+        }
+      },
+      "pipelineParameterSet" : "default"
+    } ],
+    "isTranspiledPipeline" : false,
+    "publishDiagnosticMetrics" : false,
+    "processesVsModelFiles" : {
+      "ikea_account_filter_RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t" : "models/trigger/trigger__ikea_account_filter.sql",
+      "accounts_updated_csv_0_59957f78-f565-4083-b557-ae9bed0af3a3" : "models/trigger/trigger__ikea_account_filter.sql",
+      "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : "models/trigger/trigger__ikea_account_filter.sql"
+    }
+  },
+  "processes" : {
+    "J-7BsZgEFEPgbv9GvBFB1" : {
+      "id" : "J-7BsZgEFEPgbv9GvBFB1",
+      "component" : "OrchestrationSource",
+      "kind" : "SFTPSource",
+      "metadata" : {
+        "label" : "accounts_updated_csv_0",
+        "x" : -280,
+        "y" : -140,
+        "phase" : 0
+      },
+      "properties" : {
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "connector" : {
+          "kind" : "sftp",
+          "properties" : {
+            "authMethod" : "password",
+            "id" : "sftp_1",
+            "kgConfig" : {
+              "authDetails" : {
+                "authMethod" : "password"
+              },
+              "kgSchedule" : { },
+              "useConnectorAuth" : true
+            },
+            "port" : 22
+          },
+          "type" : "connector"
+        },
+        "format" : {
+          "kind" : "csv",
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "schema" : {
+              "providerType" : "Databricks",
+              "fields" : [ {
+                "name" : "Name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "Engagement_category",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "Salesforce_Account_Account_Name",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "Salesforce_Account_Number_Of_Opportunities",
+                "dataType" : {
+                  "type" : "Bigint"
+                }
+              }, {
+                "name" : "Salesforce_Account_Open_To_Low_Code",
+                "dataType" : {
+                  "type" : "Boolean"
+                }
+              }, {
+                "name" : "Hubspot_Company_Last_Touch_Converting_Campaign",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "Hubspot_Company_First_Touch_Converting_Campaign",
+                "dataType" : {
+                  "type" : "String"
+                }
+              }, {
+                "name" : "Salesforce_Account_Last_MQL_Date",
+                "dataType" : {
+                  "type" : "Bigint"
+                }
+              }, {
+                "name" : "FileName",
+                "dataType" : {
+                  "type" : "String"
+                }
+              } ]
+            },
+            "header" : true
+          }
+        },
+        "properties" : {
+          "fileOperationProperties" : {
+            "fileLoadingType" : "filepath",
+            "includeFileNameColumn" : true
+          },
+          "filePath" : "/prophecy-sftp/demo_files/accounts_updated.csv"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "59957f78-f565-4083-b557-ae9bed0af3a3",
+          "slug" : "out0"
+        } ]
+      }
+    },
+    "JK__5Y4EaDZWd0yDk9Smm$$wo4B1ewyMIoXYbqhibSa4" : {
+      "id" : "JK__5Y4EaDZWd0yDk9Smm$$wo4B1ewyMIoXYbqhibSa4",
+      "component" : "OrchestrationTarget",
+      "kind" : "SFTPTarget",
+      "metadata" : {
+        "label" : "account_engagement_campaigns_csv",
+        "x" : 100,
+        "y" : -140,
+        "phase" : 0,
+        "comment" : "Exports updated account records to a CSV file on an SFTP server for downstream business use.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "format" : {
+          "properties" : {
+            "allowLazyQuotes" : false,
+            "allowEmptyColumnNames" : true,
+            "separator" : ",",
+            "nullValue" : "",
+            "encoding" : "UTF-8",
+            "header" : true
+          },
+          "kind" : "csv",
+          "category" : "file"
+        },
+        "compression" : {
+          "kind" : "uncompressed"
+        },
+        "properties" : {
+          "filePath" : {
+            "type" : "concat_operation",
+            "properties" : {
+              "elements" : [ {
+                "type" : "config",
+                "properties" : {
+                  "configType" : "pipeline",
+                  "name" : "sftp_processed_path"
+                }
+              }, {
+                "type" : "literal",
+                "properties" : {
+                  "value" : "/accounts_updated_filtered.csv"
+                }
+              } ]
+            }
+          }
+        },
+        "isNew" : false,
+        "connector" : {
+          "kind" : "sftp",
+          "properties" : {
+            "id" : "sftp_1"
+          },
+          "type" : "connector"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "8V_QHfhaP98mBYMfGRbZD$$IXLs17jgsIUlAt2ibN8K6",
+          "slug" : "select_account_fields"
+        } ],
+        "outputs" : [ ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE" : {
+      "id" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "ikea_account_filter",
+        "x" : -100,
+        "y" : -140,
+        "phase" : 0,
+        "comment" : "Finds all account records related to IKEA for focused business review.",
+        "autoUpdateComment" : true
+      },
+      "properties" : {
+        "columnsSelector" : [ "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_##Salesforce_Account_Account_Name" ],
+        "condition" : {
+          "expression" : "Salesforce_Account_Account_Name = 'IKEA'"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "GrI2mlHdu9UAfJuADVsom$$vt9aJ_uEwANjKURacgR52",
+    "source" : "J-7BsZgEFEPgbv9GvBFB1",
+    "sourcePort" : "59957f78-f565-4083-b557-ae9bed0af3a3",
+    "target" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "targetPort" : "phu_x3c1TvIMcQVRO2ZRC$$37L2cozSIH3hsj_RRqVH_"
+  }, {
+    "id" : "MdIvNpxNvOapipNrtIpNR",
+    "source" : "6caSaLc43A-_-AgabU7J-$$_RilJixWD7Criwc78U8OE",
+    "sourcePort" : "RUG2P6DWR6SacbU1xCa2W$$p9UZpxqYRhbAVro7WOV1t",
+    "target" : "JK__5Y4EaDZWd0yDk9Smm$$wo4B1ewyMIoXYbqhibSa4",
+    "targetPort" : "8V_QHfhaP98mBYMfGRbZD$$IXLs17jgsIUlAt2ibN8K6"
+  } ],
+  "component" : "Pipeline"
+}

@@ -1,0 +1,9 @@
+{
+  "id" : "trigger_analysis",
+  "metainfo" : {
+    "description" : "",
+    "pipelineId" : "trigger",
+    "parameterSet" : ""
+  },
+  "instances" : { }
+}
